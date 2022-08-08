@@ -1,0 +1,10 @@
+FROM alpine:latest
+
+RUN set -e && \
+    apk add --no-cache python3
+
+COPY ./webserver.py /webserver.py
+
+RUN chmod 755 /webserver.py
+
+CMD ["python3", "webserver.py"]
